@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ScoreBoard from './components/ScoreBoard';
 import Deck from './components/Deck';
+import MessageBoard from './components/MessageBoard';
 
 const App = (props) => {
   const [scoreArray, setScoreArray] = useState({
@@ -12,6 +13,7 @@ const App = (props) => {
   });
   let deckLength = 20;
   const [gameReset, setGameReset] = useState(false);
+  const [gameWin, setGameWin] = useState(false);
 
   const setCurrentScore = (score) => {
     let scoreCopy = { ...scoreArray };
@@ -29,18 +31,23 @@ const App = (props) => {
       scoreCopy.gamesWon = scoreArray.gamesWon + 1;
       scoreCopy.currentScore = scoreArray.currentScore + 1;
       scoreCopy.topScore = scoreArray.topScore + 1;
+      setGameWin(true);
     }
     scoreCopy.gamesPlayed = scoreArray.gamesPlayed + 1;
     setScoreArray(scoreCopy);
     console.log('scoreBoard: ', scoreArray);
-    setGameReset(true);
+    function wait() {
+      setGameReset(true);
+    }
+    setTimeout(wait, 2000);
   };
 
   const reset = () => {
     function wait() {
       setGameReset(false);
+      setGameWin(false);
     }
-    setTimeout(wait, 1000);
+    setTimeout(wait, 200);
   };
 
   return (
@@ -53,9 +60,11 @@ const App = (props) => {
       {gameReset === false ? (
         <Deck deckLength={deckLength} updateScore={setCurrentScore} gameResult={setGameResults} />
       ) : (
-        <button onClick={reset} className="reset-btn">
-          Reset Game
-        </button>
+        <MessageBoard
+          title={gameWin ? 'You Won!' : 'Maybe Next Time'}
+          score={scoreArray.currentScore}
+          reset={reset}
+        />
       )}
     </div>
   );

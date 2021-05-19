@@ -12,7 +12,10 @@ const Card = (props) => {
       let data = await response.json();
       if (isCancelled === false) {
         setImgSrc(data.sprites.front_default);
-        setName(data.pokemon.name);
+        let name = data.pokemon.name;
+        let first = name[0].toUpperCase();
+        name = first + name.slice(1);
+        setName(name);
       }
     }
     fetchImage();
