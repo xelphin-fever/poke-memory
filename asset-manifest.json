@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/poke-memory/static/css/main.c4bc808e.chunk.css",
+    "main.js": "/poke-memory/static/js/main.052ac3fa.chunk.js",
+    "main.js.map": "/poke-memory/static/js/main.052ac3fa.chunk.js.map",
+    "runtime-main.js": "/poke-memory/static/js/runtime-main.4f269eee.js",
+    "runtime-main.js.map": "/poke-memory/static/js/runtime-main.4f269eee.js.map",
+    "static/js/2.561f28e0.chunk.js": "/poke-memory/static/js/2.561f28e0.chunk.js",
+    "static/js/2.561f28e0.chunk.js.map": "/poke-memory/static/js/2.561f28e0.chunk.js.map",
+    "static/js/3.14dad9ad.chunk.js": "/poke-memory/static/js/3.14dad9ad.chunk.js",
+    "static/js/3.14dad9ad.chunk.js.map": "/poke-memory/static/js/3.14dad9ad.chunk.js.map",
+    "index.html": "/poke-memory/index.html",
+    "static/css/main.c4bc808e.chunk.css.map": "/poke-memory/static/css/main.c4bc808e.chunk.css.map",
+    "static/js/2.561f28e0.chunk.js.LICENSE.txt": "/poke-memory/static/js/2.561f28e0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f269eee.js",
+    "static/js/2.561f28e0.chunk.js",
+    "static/css/main.c4bc808e.chunk.css",
+    "static/js/main.052ac3fa.chunk.js"
+  ]
+}
