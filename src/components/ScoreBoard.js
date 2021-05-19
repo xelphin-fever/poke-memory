@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ScoreBoard = (props) => {
   console.log('Score Board Rendered');

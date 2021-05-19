@@ -11,9 +11,9 @@ const App = (props) => {
     gamesPlayed: 0,
     gamesWon: 0,
   });
-  let deckLength = 20;
   const [gameReset, setGameReset] = useState(false);
   const [gameWin, setGameWin] = useState(false);
+  const [deckLength, setDeckLength] = useState(20);
 
   const setCurrentScore = (score) => {
     let scoreCopy = { ...scoreArray };
@@ -50,6 +50,10 @@ const App = (props) => {
     setTimeout(wait, 200);
   };
 
+  const updateDeck = (input) => {
+    setDeckLength(Number(input));
+  };
+
   return (
     <div className="app">
       <ScoreBoard scoreArray={scoreArray} />
@@ -64,6 +68,8 @@ const App = (props) => {
           title={gameWin ? 'You Won!' : 'Maybe Next Time'}
           score={scoreArray.currentScore}
           reset={reset}
+          deckLength={deckLength}
+          updateDeck={updateDeck}
         />
       )}
     </div>

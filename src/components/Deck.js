@@ -3,6 +3,7 @@ import Card from './Card';
 
 const Deck = (props) => {
   console.log('Render Deck');
+  console.log('length of deck is:', props.deckLength);
   const deckLength = props.deckLength;
   const [deck, setDeck] = useState(new Array(deckLength).fill(0)); // Remember 0 index invalid for API
   const [playing, setPlaying] = useState(true);

@@ -123,3 +123,23 @@
   outline: none;
   transform: scale(0.93);
 }
+
+.message-input-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-input-div h5 {
+  width: fit-content;
+  font-size: 30px;
+}
+.message-input-div input {
+  margin-left: 10px;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 30px;
+  background-color: transparent;
+  color: rgb(110, 180, 165);
+  border: none;
+  outline: none;
+}
