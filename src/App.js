@@ -27,15 +27,20 @@ const App = (props) => {
     let scoreCopy = { ...scoreArray };
     if (result === 'win') {
       scoreCopy.gamesWon = scoreArray.gamesWon + 1;
+      scoreCopy.currentScore = scoreArray.currentScore + 1;
+      scoreCopy.topScore = scoreArray.topScore + 1;
     }
     scoreCopy.gamesPlayed = scoreArray.gamesPlayed + 1;
     setScoreArray(scoreCopy);
     console.log('scoreBoard: ', scoreArray);
     setGameReset(true);
+  };
+
+  const reset = () => {
     function wait() {
       setGameReset(false);
     }
-    setTimeout(wait, 2000);
+    setTimeout(wait, 1000);
   };
 
   return (
@@ -47,7 +52,11 @@ const App = (props) => {
       </div>
       {gameReset === false ? (
         <Deck deckLength={deckLength} updateScore={setCurrentScore} gameResult={setGameResults} />
-      ) : null}
+      ) : (
+        <button onClick={reset} className="reset-btn">
+          Reset Game
+        </button>
+      )}
     </div>
   );
 };

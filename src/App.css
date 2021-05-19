@@ -62,3 +62,9 @@
   width: 100%;
   justify-content: space-around;
 }
+
+/* RESET */
+.reset-btn {
+  position: absolute;
+  font-size: 30px;
+}

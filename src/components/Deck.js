@@ -13,14 +13,6 @@ const Deck = (props) => {
     props.updateScore(score + 1);
   };
 
-  useEffect(() => {
-    console.log('Began Mount Deck');
-    setDeck(new Array(deckLength).fill(0));
-    setPlaying(true);
-    setCurrentCards([1, 2, 3]);
-    setScore(0);
-  }, []);
-
   const pickFromUnChosen = (myDeck) => {
     // Return Random Index from Deck : Has to be UnChosen ( == 0)
     let deckCopy = [...myDeck];
