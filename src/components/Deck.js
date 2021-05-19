@@ -2,15 +2,28 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const Deck = (props) => {
-  const deckLength = 20;
+  console.log('Render Deck');
+  const deckLength = props.deckLength;
   const [deck, setDeck] = useState(new Array(deckLength).fill(0)); // Remember 0 index invalid for API
   const [playing, setPlaying] = useState(true);
   const [currentCards, setCurrentCards] = useState([1, 2, 3]); // 1,2,3...26
   const [score, setScore] = useState(0);
+  const incScore = () => {
+    setScore(score + 1);
+    props.updateScore(score + 1);
+  };
 
-  const pickFromUnChosen = () => {
+  useEffect(() => {
+    console.log('Began Mount Deck');
+    setDeck(new Array(deckLength).fill(0));
+    setPlaying(true);
+    setCurrentCards([1, 2, 3]);
+    setScore(0);
+  }, []);
+
+  const pickFromUnChosen = (myDeck) => {
     // Return Random Index from Deck : Has to be UnChosen ( == 0)
-    let deckCopy = [...deck];
+    let deckCopy = [...myDeck];
     deckCopy = deckCopy.map((chosen, index) => {
       if (chosen === 0) {
         return index + 1; // +1 : because 0 index invalid
@@ -24,8 +37,6 @@ const Deck = (props) => {
       return deckCopy[Math.floor(Math.random() * deckCopy.length)];
     }
     return Math.floor(Math.random() * deckCopy.length) + 1;
-
-    // maybe replace with useEffect, whenever deck changes, setState to new randomUnChosen
   };
 
   const pickValidOption = (card, toBeCards) => {
@@ -41,26 +52,9 @@ const Deck = (props) => {
     return chosen;
   };
 
-  /*
-  const createNewCurrentCards = () => {
-    let chooseCards = [-1, -1, -1];
-    const notChosen = pickFromUnChosen();
-    const placeNotChosen = Math.floor(Math.random() * 3);
-    chooseCards[placeNotChosen] = notChosen;
-    console.log('current cards one unChosen placed:', chooseCards);
-    let arrayCollect = [];
-    chooseCards = chooseCards.map((card) => {
-      let option = pickValidOption(card, arrayCollect);
-      arrayCollect.push(option);
-      return option;
-    });
-    setCurrentCards(chooseCards);
-  };
-  */
-
   useEffect(() => {
     let chooseCards = [-1, -1, -1];
-    const notChosen = pickFromUnChosen();
+    const notChosen = pickFromUnChosen(deck);
     const placeNotChosen = Math.floor(Math.random() * 3);
     chooseCards[placeNotChosen] = notChosen;
     console.log('current cards one unChosen placed:', chooseCards);
@@ -91,15 +85,17 @@ const Deck = (props) => {
       if (deck[pokeIndex - 1] === 1) {
         setPlaying(false);
         console.log('Game Over');
-        console.log('score', score);
+        console.log('score', score + 1);
+        props.gameResult('lose');
       } else if (score === deckLength - 1) {
+        incScore();
         setPlaying(false);
         console.log('You Won!');
-        console.log('score', score);
+        console.log('score', score + 1);
+        props.gameResult('win');
       } else {
-        setScore(score + 1);
+        incScore();
         updateDeck(pokeIndex);
-        // createNewCurrentCards()
       }
     }
   };
