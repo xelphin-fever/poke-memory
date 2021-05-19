@@ -11,6 +11,7 @@ const App = (props) => {
     gamesWon: 0,
   });
   let deckLength = 20;
+  const [gameReset, setGameReset] = useState(false);
 
   const setCurrentScore = (score) => {
     let scoreCopy = { ...scoreArray };
@@ -30,6 +31,11 @@ const App = (props) => {
     scoreCopy.gamesPlayed = scoreArray.gamesPlayed + 1;
     setScoreArray(scoreCopy);
     console.log('scoreBoard: ', scoreArray);
+    setGameReset(true);
+    function wait() {
+      setGameReset(false);
+    }
+    setTimeout(wait, 2000);
   };
 
   return (
@@ -39,7 +45,9 @@ const App = (props) => {
         <h1 className="title">PokeMemory!</h1>
         <h4 className="subTitle">Don't Click On The Same Pokemon Twice ;)</h4>
       </div>
-      <Deck deckLength={deckLength} updateScore={setCurrentScore} gameResult={setGameResults} />
+      {gameReset === false ? (
+        <Deck deckLength={deckLength} updateScore={setCurrentScore} gameResult={setGameResults} />
+      ) : null}
     </div>
   );
 };
