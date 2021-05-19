@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/scoreBoard.css';
 
 const ScoreBoard = (props) => {
   console.log('Score Board Rendered');

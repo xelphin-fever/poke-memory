@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import '../stylesheets/deck.css';
 
 const Deck = (props) => {
   console.log('Render Deck');

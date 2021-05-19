@@ -1,0 +1,8 @@
+/* DECK */
+.deck-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin: 110px auto;
+}

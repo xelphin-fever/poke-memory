@@ -1,0 +1,59 @@
+/* MESSAGE BOARD */
+.message-div {
+  background-color: rgb(234, 246, 250);
+  border: 2px solid rgb(110, 180, 165);
+  width: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 90px auto;
+  justify-content: space-around;
+  min-height: 300px;
+}
+.message-title {
+  font-size: 80px;
+}
+.message-score {
+  font-size: 50px;
+}
+.reset-btn {
+  font-size: 35px;
+  background-color: rgb(110, 180, 165);
+  border: none;
+  color: rgb(234, 246, 250);
+  box-shadow: 8px 8px rgb(202, 220, 226);
+  transition: 0.15s all linear;
+}
+.reset-btn:hover {
+  box-shadow: 5px 5px rgb(202, 220, 226);
+  transform: scale(0.95);
+  transform: translate(3px, 3px);
+}
+.reset-btn:active,
+.reset-btn:focus {
+  border: none;
+  outline: none;
+  transform: scale(0.93);
+}
+
+.message-input-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-input-div h5 {
+  width: fit-content;
+  font-size: 30px;
+}
+.message-input-div input {
+  margin-left: 10px;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 30px;
+  background-color: transparent;
+  color: rgb(110, 180, 165);
+  border: none;
+  outline: none;
+  text-decoration: underline;
+}

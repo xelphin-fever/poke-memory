@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../stylesheets/card.css';
 
 const Card = (props) => {
   // const [pokeIndex, setPokeIndex] = useState(props.index);

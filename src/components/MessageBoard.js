@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/messageBoard.css';
 
 const MessageBoard = (props) => {
   const setDeck = () => {

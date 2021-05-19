@@ -14,18 +14,6 @@
   color: rgb(119, 192, 176);
 }
 
-/* SCORE BOARD */
-.scoreBoard {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  border: 2px solid rgb(110, 180, 165);
-  position: absolute;
-  padding: 20px;
-  top: 20px;
-  left: 20px;
-}
-
 /* TITLE */
 .titleDiv {
   width: 100%;
@@ -36,113 +24,6 @@
 .title {
   font-size: 130px;
   text-shadow: 5px 5px rgb(202, 220, 226);
-}
-
-/* CARD */
-.card-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  background-color: rgb(234, 246, 250);
-  border: 2px solid rgb(110, 180, 165);
-  padding: 15px;
-  box-shadow: 10px 10px rgb(202, 220, 226);
-  transition: 0.15s all linear;
-}
-.card-div:hover {
-  box-shadow: 5px 5px rgb(202, 220, 226);
-  transform: scale(0.95);
-  transform: translate(5px, 5px);
-}
-.card-div:hover > .card-img {
-  box-shadow: inset 5px 5px rgb(202, 220, 226);
-}
-.card-img {
-  border: 2px solid rgb(110, 180, 165);
-  width: 300px;
-  box-shadow: inset 10px 10px rgb(202, 220, 226);
-  transition: 0.15s all linear;
-}
-.card-name {
-  display: inline-block;
-  width: fit-content;
-  font-size: 55px;
-  padding: 10px;
-  text-shadow: -3px -3px rgb(202, 220, 226);
-  transition: 0.15s all linear;
-}
-.card-div:hover > .card-name {
-  text-shadow: -2px -2px rgb(202, 220, 226);
-}
-
-/* DECK */
-.deck-div {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  margin: 110px auto;
-}
-
-/* MESSAGE BOARD */
-.message-div {
-  background-color: rgb(234, 246, 250);
-  border: 2px solid rgb(110, 180, 165);
-  width: fit-content;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 90px auto;
-  justify-content: space-around;
-  min-height: 300px;
-}
-.message-title {
-  font-size: 80px;
-}
-.message-score {
-  font-size: 50px;
-}
-.reset-btn {
-  font-size: 35px;
-  background-color: rgb(110, 180, 165);
-  border: none;
-  color: rgb(234, 246, 250);
-  box-shadow: 8px 8px rgb(202, 220, 226);
-  transition: 0.15s all linear;
-}
-.reset-btn:hover {
-  box-shadow: 5px 5px rgb(202, 220, 226);
-  transform: scale(0.95);
-  transform: translate(3px, 3px);
-}
-.reset-btn:active,
-.reset-btn:focus {
-  border: none;
-  outline: none;
-  transform: scale(0.93);
-}
-
-.message-input-div {
-  display: flex;
-  flex-direction: row;
-}
-
-.message-input-div h5 {
-  width: fit-content;
-  font-size: 30px;
-}
-.message-input-div input {
-  margin-left: 10px;
-  font-weight: bold;
-  width: fit-content;
-  font-size: 30px;
-  background-color: transparent;
-  color: rgb(110, 180, 165);
-  border: none;
-  outline: none;
-  text-decoration: underline;
 }
 
 /* TEXT LEFT */
