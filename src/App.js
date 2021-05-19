@@ -72,6 +72,7 @@ const App = (props) => {
           updateDeck={updateDeck}
         />
       )}
+      <h3 className="text-left">You have {deckLength - scoreArray.currentScore} left</h3>
     </div>
   );
 };

@@ -142,4 +142,12 @@
   color: rgb(110, 180, 165);
   border: none;
   outline: none;
+  text-decoration: underline;
+}
+
+/* TEXT LEFT */
+.text-left {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
 }
